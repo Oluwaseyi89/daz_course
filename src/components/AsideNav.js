@@ -2,10 +2,11 @@ import React, {useContext} from 'react';
 
 import '../styles/asidenav.css';
 import { AppContext } from '../App';
+import NavButton from './NavButton';
 
-function AsideNav ({navBtnClick}) {
+function AsideNav () {
 
-    const appState = useContext(AppContext);
+    const {appState, navBtnClick}= useContext(AppContext);
 
     
 
@@ -13,7 +14,7 @@ function AsideNav ({navBtnClick}) {
         <div className='asidenav'>
             <div className='nav-btn-container'>
                 {appState.navState.map((item) => {
-                    return <button key={item.id} onClick={() => navBtnClick(item.id)}>{item.title}</button>
+                    return <NavButton key={item.id} item={item} navBtnClick={navBtnClick} />
                 })}
             </div>
         </div>

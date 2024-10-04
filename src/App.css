@@ -1,16 +1,36 @@
 :root {
   --light-separator-color: #E1E1E1;
+  --active-nav-btn-color: #5541D7;
+  --active-nav-text-color: #F7F7FC;
+  --inactive-nav-icon-color: #9A9AB0;
+  --active-nav-icon-color: #FFFFFF;
+  --app-black-text-color: #11142D;
 }
 
-* {
+@font-face {
+  font-family: Mulish;
+  src: url('../public/assets/fonts/Mulish-Regular.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Mulish Bold';
+  src: url('../public/assets/fonts/Mulish-Bold.ttf');
+  font-weight: 700;
+}
+
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-} 
+}
 
 .App {
   max-width: 100vw;
   overflow-x: hidden;
+  color: var(--app-black-text-color);
 }
 
 
