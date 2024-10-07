@@ -19,7 +19,7 @@
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 672px) {
 
      .asidenav {
         display: none;
@@ -38,6 +38,7 @@
         border-right: solid var(--light-separator-color) 1px;
         position: fixed;
         margin-left: 0px;
+        margin-top: 80px;
 
 
     }

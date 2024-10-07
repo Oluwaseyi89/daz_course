@@ -1,0 +1,36 @@
+@media screen and (max-width: 320px) {
+
+     .mylearning {
+
+    }
+
+}
+
+
+@media screen and (min-width: 320px) {
+
+     .mylearning {
+        width: 100%;
+
+    }
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+     .mylearning {
+
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+     .mylearning {
+
+    }
+
+}
+

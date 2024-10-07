@@ -1,3 +1,5 @@
 import Dashboard from "./Dashboard";
+import MyProgress from "./MyProgress";
+import SuccessHabit from "./SuccessHabit";
 
-export {Dashboard}
+export {Dashboard, MyProgress, SuccessHabit}

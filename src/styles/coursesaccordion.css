@@ -1,0 +1,90 @@
+@media screen and (max-width: 320px) {
+
+     .coursesaccordion {
+
+    }
+
+}
+
+
+@media screen and (min-width: 320px) {
+
+   
+    .coursesaccordion {
+        width: 300px;
+        background-color: #f8f8fc;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      
+      .accordion-item {
+        background: #fff;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      
+      .accordion-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      
+      .accordion-header h3 {
+        margin: 0;
+      }
+      
+      .accordion-content {
+        padding: 10px 15px;
+        border-top: 1px solid #e6e6e6;
+        background-color: #fafafa;
+      }
+      
+      .lesson-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #e6e6e6;
+        font-size: 14px;
+      }
+      
+      .lesson-item:last-child {
+        border-bottom: none;
+      }
+      
+      .lesson-title {
+        display: flex;
+        align-items: center;
+      }
+      
+      .lesson-duration {
+        color: #888;
+        font-size: 12px;
+      }
+      
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+     .coursesaccordion {
+
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+     .coursesaccordion {
+
+    }
+
+}
+

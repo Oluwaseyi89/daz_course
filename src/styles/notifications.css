@@ -1,0 +1,69 @@
+@media screen and (max-width: 320px) {
+
+     .notifications {
+
+    }
+
+}
+
+
+@media screen and (min-width: 320px) {
+
+    .notifications {
+        width: 350px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+      }
+      
+      .notification-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .settings-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .notification-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 16px 0;
+      }
+      
+      .see-all {
+        text-align: center;
+        margin-top: 16px;
+      }
+      
+      .see-all a {
+        color: #6b5bff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+     .notifications {
+
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+     .notifications {
+
+    }
+
+}
+

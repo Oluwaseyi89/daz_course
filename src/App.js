@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
 import './styles/header.css'
 import { Header, AsideNav, ContentView } from './components';
-import { navState } from './states';
+import { navState, notifications, courseLearning, courses } from './states';
 import { appReducer } from './reducers';
 import {Dashboard} from './components/dashboard';
 import {Explore} from './components/explore';
@@ -20,6 +20,9 @@ function App() {
 
   const initialAppState = {
     navState: navState,
+    courseLearning: courseLearning,
+    courses: courses,
+    notifications: notifications,
     cartState: []
   }
 
