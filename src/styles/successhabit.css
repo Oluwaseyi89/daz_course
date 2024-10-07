@@ -37,6 +37,9 @@
         font-size: 48px;
         font-weight: 700;
         margin-bottom: 8px;
+        /* color: var(--active-nav-btn-color); */
+        color: white;
+
       }
       
       .overlay-content p {

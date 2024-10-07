@@ -8,9 +8,7 @@ import SuccessHabit from './SuccessHabit';
 import { CourseProgressCard } from '../mylearning';
 import { CourseCard } from '../explore';
 import { compareAndFilterCourses } from '../../utils';
-import { courses, changingBgImages } from '../../states';
-
-
+import { courses, changingBgImages, changingTextColors, changingParagraphTxtColors } from '../../states';
 
 
 function Dashboard (props) {
@@ -39,8 +37,8 @@ function Dashboard (props) {
 
     return (
         <div className='dashboard'>
-            <SuccessHabit  backgroundImages={changingBgImages}/>
-            <div className='dash-learning-title'>
+           <SuccessHabit pTextColors={changingParagraphTxtColors} textColors={changingTextColors} backgroundImages={changingBgImages}/>
+           <div className='dash-learning-title'>
                 <span>Continue Learning</span>
                 <span onClick={() => toggleSeeAll()}>{seeAll ? "See Less" : "See All"}</span>
             </div>

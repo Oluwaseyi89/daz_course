@@ -1,0 +1,60 @@
+@media screen and (max-width: 320px) {
+
+     .courserequirements {
+
+    }
+
+}
+
+
+@media screen and (min-width: 320px) {
+
+    .courserequirements {
+        padding: 20px;
+        background-color: #fff;
+      }
+      
+      .rcourseequirements h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+      
+      .courserequirements ul {
+        list-style-type: none; /* Remove default bullets */
+        padding-left: 0;
+      }
+      
+      .requirement-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      
+      .bullet {
+        color: #d3bffa; /* Light purple color for the bullet */
+        font-size: 20px;
+        margin-right: 10px;
+      }
+      
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+     .courserequirements {
+
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+     .courserequirements {
+
+    }
+
+}
+

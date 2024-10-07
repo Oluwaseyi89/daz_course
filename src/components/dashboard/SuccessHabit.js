@@ -3,14 +3,22 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/successhabit.css';
 
 
-function SuccessHabit ({ backgroundImages }) {
+function SuccessHabit ({ backgroundImages, textColors, pTextColors }) {
 
  
 const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const [currentTxtColorIndex, setCurrentTxtColorIndex] = useState(0);
+const [currentPTxtColorIndex, setCurrentPTxtColorIndex] = useState(0);
+
+
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+      setCurrentTxtColorIndex((prevIndex) => (prevIndex + 1) % textColors.length);
+      setCurrentPTxtColorIndex((prevIndex) => (prevIndex + 1) % pTextColors.length);
+
+
     }, 5000);
 
     // Clear the interval when the component is unmounted
@@ -18,18 +26,27 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
   }, [backgroundImages.length]);
 
   const backgroundStyle = {
-
     backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    transition: 'background-image 1s ease-in-out',
+    transition: 'background-image 1s ease-in-out',   
+  };
+
+  const textColorStyle = {
+    color: `${textColors[currentTxtColorIndex]}`,
+    transition: 'color 1s ease-in-out',
+  };
+
+  const pTextColorStyle = {
+    color: `${pTextColors[currentPTxtColorIndex]}`,
+    transition: 'color 1s ease-in-out',
   };
 
     return (
         <div className="successhabit"     style={backgroundStyle}>
           <div className="overlay-content">
-            <h1>Success is a habit</h1>
-            <p>Build your learning routine in DazCourse. Find your best course here!</p>
+            <h1 style={textColorStyle}>Success is a habit</h1>
+            <p style={pTextColorStyle}>Build your learning routine in DazCourse. Find your best course here!</p>
             <button className="explore-button">Explore Now</button>
           </div>
         </div>

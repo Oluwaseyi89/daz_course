@@ -4,7 +4,7 @@ import '../../styles/searchinput.css';
 import { UseSearch } from '../../utils';
 
 
-function SearchInput ({ resultSetter }) {
+function SearchInput ({ setSearchPerformed, resultSetter }) {
 
   
   const [searchInput, setSearchInput] = useState("");
@@ -25,6 +25,7 @@ function SearchInput ({ resultSetter }) {
   }
 
   const handleSearchInputChange = (e) => {
+    setSearchPerformed(false);
     setSearchInput(e.target.value);
   }
 
@@ -32,6 +33,7 @@ function SearchInput ({ resultSetter }) {
 
   const handleSearchOperation = () => {
     let searchResults = UseSearch(searchInput);
+    setSearchPerformed(true);
     resultSetter(searchResults);
   }
 
