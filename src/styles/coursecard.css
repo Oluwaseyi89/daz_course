@@ -18,7 +18,7 @@
     margin-bottom: 30px;
   }
   
-  .card-image-dashboard {
+  .sm-card-image-dashboard {
     position: relative;
     width: 280px;
     height: 132px;
@@ -31,13 +31,13 @@
     /* margin: 0px; */
   }
   
-  .card-image-dashboard img {
+  .sm-card-image-dashboard img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
   
-  .best-seller-badge {
+  .sm-best-seller-badge {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -49,7 +49,7 @@
     border-radius: 5px;
   }
   
-  .card-content {
+  .sm-card-content {
     /* padding: 15px; */
     height: 198px;
     width: 300px;
@@ -59,7 +59,7 @@
     font-family: 'Mulish Bold';
   }
   
-  .card-title {
+  .sm-card-title {
     font-family: 'Mulish Bold';
     font-size: 24px;
     font-weight: 600;
@@ -67,14 +67,14 @@
     color: #333;
   }
   
-  .author-info {
+  .sm-author-info {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
     /* margin-top: -5px; */
   }
   
-  .author-avatar {
+  .sm-author-avatar {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -82,12 +82,12 @@
     margin-right: 8px;
   }
   
-  .author-name {
+  .sm-author-name {
     font-size: 14px;
     color: #666;
   }
   
-  .rating-info {
+  .sm-rating-info {
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -95,34 +95,34 @@
     margin-bottom: 8px;
   }
   
-  .rating-star {
+  .sm-rating-star {
     margin-right: 5px;
   }
   
-  .reviews {
+  .sm-reviews {
     color: #888;
   }
   
-  .price-info {
+  .sm-price-info {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
   }
   
-  .current-price {
+  .sm-current-price {
     font-size: 20px;
     font-weight: bold;
     color: #10b981;
     margin-right: 8px;
   }
   
-  .original-price {
+  .sm-original-price {
     font-size: 14px;
     color: #888;
     text-decoration: line-through;
   }
 
-  .price-cart-div {
+  .sm-price-cart-div {
     position: absolute;
     width: 300px;
     height: 50px;
@@ -135,7 +135,7 @@
     padding: 0px 10px 0px 10px;
   }
   
-  .add-to-cart-btn {
+  .sm-add-to-cart-btn {
     width: 120px;
     height: 35px;
     /* padding: 10px; */
@@ -148,7 +148,7 @@
     cursor: pointer;
   }
   
-  .add-to-cart-btn:hover {
+  .sm-add-to-cart-btn:hover {
     background-color: #5a4ecc;
   }
 
@@ -177,7 +177,7 @@
         margin-right: 30px;
       }
       
-      .card-image-dashboard {
+      .sm-card-image-dashboard {
         position: relative;
         width: 280px;
         height: 132px;
@@ -190,13 +190,13 @@
         /* margin: 0px; */
       }
       
-      .card-image-dashboard img {
+      .sm-card-image-dashboard img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
       
-      .best-seller-badge {
+      .sm-best-seller-badge {
         position: absolute;
         top: 8px;
         right: 8px;
@@ -208,7 +208,7 @@
         border-radius: 5px;
       }
       
-      .card-content {
+      .sm-card-content {
         /* padding: 15px; */
         height: 198px;
         width: 300px;
@@ -218,7 +218,7 @@
         font-family: 'Mulish Bold';
       }
       
-      .card-title {
+      .sm-card-title {
         font-family: 'Mulish Bold';
         font-size: 24px;
         font-weight: 600;
@@ -226,14 +226,14 @@
         color: #333;
       }
       
-      .author-info {
+      .sm-author-info {
         display: flex;
         align-items: center;
         margin-bottom: 8px;
         /* margin-top: -5px; */
       }
       
-      .author-avatar {
+      .sm-author-avatar {
         width: 36px;
         height: 36px;
         border-radius: 50%;
@@ -241,12 +241,12 @@
         margin-right: 8px;
       }
       
-      .author-name {
+      .sm-author-name {
         font-size: 14px;
         color: #666;
       }
       
-      .rating-info {
+      .sm-rating-info {
         display: flex;
         align-items: center;
         font-size: 14px;
@@ -254,34 +254,34 @@
         margin-bottom: 8px;
       }
       
-      .rating-star {
+      .sm-rating-star {
         margin-right: 5px;
       }
       
-      .reviews {
+      .sm-reviews {
         color: #888;
       }
       
-      .price-info {
+      .sm-price-info {
         display: flex;
         align-items: center;
         margin-bottom: 10px;
       }
       
-      .current-price {
+      .sm-current-price {
         font-size: 20px;
         font-weight: bold;
         color: #10b981;
         margin-right: 8px;
       }
       
-      .original-price {
+      .sm-original-price {
         font-size: 14px;
         color: #888;
         text-decoration: line-through;
       }
 
-      .price-cart-div {
+      .sm-price-cart-div {
         position: absolute;
         width: 300px;
         height: 50px;
@@ -294,7 +294,7 @@
         padding: 0px 10px 0px 10px;
       }
       
-      .add-to-cart-btn {
+      .sm-add-to-cart-btn {
         width: 120px;
         height: 35px;
         /* padding: 10px; */
@@ -307,7 +307,7 @@
         cursor: pointer;
       }
       
-      .add-to-cart-btn:hover {
+      .sm-add-to-cart-btn:hover {
         background-color: #5a4ecc;
       }
       

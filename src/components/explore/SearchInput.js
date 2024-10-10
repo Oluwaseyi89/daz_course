@@ -34,6 +34,7 @@ function SearchInput ({ setSearchPerformed, resultSetter }) {
   const handleSearchOperation = () => {
     let searchResults = UseSearch(searchInput);
     setSearchPerformed(true);
+    localStorage.setItem("currentSearch", JSON.stringify({"results": [...searchResults]}));
     resultSetter(searchResults);
   }
 

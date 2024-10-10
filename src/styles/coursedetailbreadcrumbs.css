@@ -1,0 +1,69 @@
+@media screen and (max-width: 320px) {
+
+     .coursedetailbreadcrumbs {
+
+    }
+
+}
+
+
+@media screen and (min-width: 320px) {
+
+    .coursedetailbreadcrumbs {
+        font-size: 14px;
+        color: #7d7d7d; /* Light gray color similar to the one in the image */
+        display: flex;
+        align-items: center;
+        /* border:  solid red 1px; */
+        width: 300px;
+        
+        /* top: 0; */
+      }
+      
+      .coursedetailbreadcrumbs span {
+        margin-right: 5px;
+        height: 35px;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .coursedetailbreadcrumbs span:hover {
+        /* background-color: var(--active-nav-btn-color); */
+      }
+      
+      .separator {
+        margin-right: 5px;
+        color: #a0a0a0; /* Slightly darker shade for the separators */
+      }
+      
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+     .coursedetailbreadcrumbs {
+
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+  .coursedetailbreadcrumbs {
+    font-size: 14px;
+    color: #7d7d7d; /* Light gray color similar to the one in the image */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border:  solid red 1px; */
+    width: 500px;
+  }
+  
+
+}
+

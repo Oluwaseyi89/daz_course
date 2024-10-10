@@ -12,6 +12,8 @@
     .whatyouwilllearn {
         padding: 20px;
         background-color: #fff;
+        width: 100%;
+        /* border: solid orange 1px; */
       }
       
       .whatyouwilllearn h2 {

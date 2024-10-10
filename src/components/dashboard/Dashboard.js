@@ -15,7 +15,7 @@ function Dashboard (props) {
 
 
 
-    const {appState} = useContext(AppContext);        
+    const {appState, addToCart, removeFromCart} = useContext(AppContext);        
       
   
     const {courseLearning} = appState;
@@ -72,7 +72,7 @@ function Dashboard (props) {
                 {
                     newCat.map(course => {
                         return (
-                            <CourseCard key={course.id} image={course.courseImage} title={course.courseTitle} author={course.instructor} rating={course.averageRating} reviews={course.numberOfReviews} price={course.coursePrice} originalPrice={course.originalPrice} isBestSeller={true} />
+                            <CourseCard key={course.id} item={course} addToCart={addToCart} removeFromCart={removeFromCart}  image={course.courseImage} title={course.courseTitle} author={course.instructor} rating={course.averageRating} reviews={course.numberOfReviews} price={course.coursePrice} originalPrice={course.originalPrice} isBestSeller={true} />
                         )
                     })
 

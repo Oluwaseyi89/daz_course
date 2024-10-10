@@ -5,6 +5,10 @@ import SearchInput from './SearchInput'
 import CourseDetailPrice from './CourseDetailPrice'
 import WhatYouWillLearn from './WhatYouWillLearn'
 import CourseRequirements from './CourseRequirements'
+import CourseDescription from './CourseDescription'
+import CourseDetailBreadCrumbs from './CourseDetailBreadCrumbs'
+import ReviewCard from './ReviewCard'
+import CourseDetailPage from './CourseDetailPage'
 
 export {
     Explore, 
@@ -13,5 +17,9 @@ export {
     SearchInput, 
     CourseDetailPrice, 
     WhatYouWillLearn,
-    CourseRequirements
+    CourseRequirements,
+    CourseDescription,
+    CourseDetailBreadCrumbs,
+    ReviewCard,
+    CourseDetailPage
 }

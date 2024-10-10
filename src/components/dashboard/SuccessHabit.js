@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 import '../../styles/successhabit.css';
 
@@ -9,6 +11,10 @@ function SuccessHabit ({ backgroundImages, textColors, pTextColors }) {
 const [currentImageIndex, setCurrentImageIndex] = useState(0);
 const [currentTxtColorIndex, setCurrentTxtColorIndex] = useState(0);
 const [currentPTxtColorIndex, setCurrentPTxtColorIndex] = useState(0);
+
+const navigate = useNavigate();
+
+ 
 
 
 
@@ -23,7 +29,7 @@ const [currentPTxtColorIndex, setCurrentPTxtColorIndex] = useState(0);
 
     // Clear the interval when the component is unmounted
     return () => clearInterval(intervalId);
-  }, [backgroundImages.length]);
+  }, [backgroundImages.length, textColors.length, pTextColors.length]);
 
   const backgroundStyle = {
     backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
@@ -47,7 +53,7 @@ const [currentPTxtColorIndex, setCurrentPTxtColorIndex] = useState(0);
           <div className="overlay-content">
             <h1 style={textColorStyle}>Success is a habit</h1>
             <p style={pTextColorStyle}>Build your learning routine in DazCourse. Find your best course here!</p>
-            <button className="explore-button">Explore Now</button>
+            {window.location.pathname === "/explore" ? "" : <button onClick={() => navigate("/explore")} className="explore-button">Explore Now</button>}
           </div>
         </div>
       );

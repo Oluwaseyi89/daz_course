@@ -1,3 +1,4 @@
 import appReducer from "./appReducer";
+import { initialAppState } from "./appReducer";
 
-export {appReducer}
+export {appReducer, initialAppState}

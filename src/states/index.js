@@ -5,6 +5,18 @@ import { notifications } from "./notifications";
 import { changingBgImages } from "./changingBgImages";
 import { changingTextColors } from "./changingBgImages";
 import { changingParagraphTxtColors } from "./changingBgImages";
+import { cartStorageKey } from "./cartState";
+import { userState } from "./userState";
 
 
-export {navState, courseLearning, courses, notifications, changingBgImages, changingTextColors, changingParagraphTxtColors}
+export {navState, 
+    courseLearning, 
+    courses, 
+    notifications, 
+    changingBgImages, 
+    changingTextColors, 
+    changingParagraphTxtColors,
+    // cartState,
+    cartStorageKey,
+    userState
+}
