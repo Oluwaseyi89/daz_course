@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../../styles/whatyouwilllearn.css';
+import { FaCheck } from 'react-icons/fa6';
 
 function WhatYouWillLearn (props) {
 
@@ -18,7 +19,7 @@ function WhatYouWillLearn (props) {
           <div className="learning-grid">
             {learningPoints.map((point, index) => (
               <div key={index} className="learning-item">
-                <span className="checkmark">✔️</span> {point}
+                <span className="checkmark"><FaCheck/></span> {point}
               </div>
             ))}
           </div>

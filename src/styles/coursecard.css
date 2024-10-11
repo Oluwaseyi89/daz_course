@@ -187,6 +187,7 @@
         overflow: hidden;
         /* border: solid orange 1px; */
         background-color: #dcdce6;
+        cursor: pointer;
         /* margin: 0px; */
       }
       

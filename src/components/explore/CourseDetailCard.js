@@ -22,8 +22,7 @@ function CourseDetailCard ({
           </div>
           <div className='card-detail-bottom'>
             <div className="card-content">
-              <h2 className="card-title">E-Commerce Mobile App
-Design using Figma</h2>
+              <h2 className="card-title">{title}</h2>
             </div>
             <div className="card-actions">
             <i><FaHeart/></i>
@@ -34,13 +33,13 @@ Design using Figma</h2>
               <span className="card-rating"><span className='detail-star'><FaStar/></span> {rating} ({reviews} Reviews)</span>
               <span className="card-students">{students} students</span>
             </div>
-            <p className="card-author">Created by <strong>Jack Harper</strong></p>
+            <p className="card-author">Created by <strong>{author}</strong></p>
             <div className="card-info">
               <span><FaClockRotateLeft/> </span>
               <span>Last update </span>
               <span>12/2020</span>
-              <span><FaGlobe/> {language}</span>
-              <span><FaGlobe/> {subtitles}</span>
+              <span><FaGlobe/> English</span>
+              <span><FaGlobe/> English Frech</span>
             </div>
           
         </div>

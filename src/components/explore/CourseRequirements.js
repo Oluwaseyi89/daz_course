@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../../styles/courserequirements.css';
+import { FaCircle } from 'react-icons/fa6';
 
 function CourseRequirements (props) {
 
@@ -16,7 +17,7 @@ function CourseRequirements (props) {
           <ul>
             {requirements.map((requirement, index) => (
               <li key={index} className="requirement-item">
-                <span className="bullet">●</span> {requirement}
+                <span className="bullet"><FaCircle/></span> {requirement}
               </li>
             ))}
           </ul>

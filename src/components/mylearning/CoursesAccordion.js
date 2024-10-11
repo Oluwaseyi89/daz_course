@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 
 import '../../styles/coursesaccordion.css';
+import { FaChevronDown, FaChevronUp, FaPlay, FaViadeo, FaVideo, FaVideoSlash, FaYoutube } from 'react-icons/fa6';
+import { FaPlayCircle } from 'react-icons/fa';
 
 function CoursesAccordion (props) {
 
@@ -32,13 +34,16 @@ function CoursesAccordion (props) {
         <div key={index} className="accordion-item">
           <div className="accordion-header" onClick={() => toggleSection(index)}>
             <h3>{section.title}</h3>
-            <span>{activeIndex === index ? '▲' : '▼'}</span>
+            <span>{activeIndex === index ? <FaChevronUp/> : <FaChevronDown/>}</span>
           </div>
           {activeIndex === index && section.lessons.length > 0 && (
             <div className="accordion-content">
               {section.lessons.map((lesson, lessonIndex) => (
                 <div key={lessonIndex} className="lesson-item">
-                  <span className="lesson-title">{lesson.title}</span>
+                  <span className="lesson-title">
+                    <span className='video-icon'><FaPlayCircle/></span>
+                  {lesson.title}
+                  </span>
                   <span className="lesson-duration">{lesson.duration}</span>
                 </div>
               ))}

@@ -11,13 +11,15 @@
 
     .whatyouwilllearn {
         padding: 20px;
-        background-color: #fff;
+        /* background-color: #fff; */
+        background-color: var(--card-background-color);
         width: 100%;
         /* border: solid orange 1px; */
       }
       
       .whatyouwilllearn h2 {
-        font-size: 24px;
+        font-size: 31px;
+        font-family: 'Mulish Bold';
         margin-bottom: 15px;
       }
       
@@ -31,11 +33,13 @@
         display: flex;
         align-items: center;
         font-size: 16px;
+        font-family: 'Mulish';
       }
       
       .checkmark {
         margin-right: 10px;
-        color: #20c997; /* Green color for the checkmark */
+        /* color: #20c997; Green color for the checkmark */
+        color: black;
       }
       
 

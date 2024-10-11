@@ -11,13 +11,15 @@
 
     .courserequirements {
         padding: 20px;
-        background-color: #fff;
+        /* background-color: #fff; */
+        background-color: var(--card-background-color);
         width: 100%;
       }
       
-      .rcourseequirements h2 {
-        font-size: 24px;
+      .courserequirements h2 {
+        font-size: 31px;
         margin-bottom: 15px;
+        font-family: 'Mulish Bold' ;
       }
       
       .courserequirements ul {
@@ -30,11 +32,14 @@
         align-items: center;
         margin-bottom: 10px;
         font-size: 16px;
+        font-family: 'Mulish';
+        text-align: justify;
       }
       
       .bullet {
         color: #d3bffa; /* Light purple color for the bullet */
-        font-size: 20px;
+        font-size: 14px;
+        font-family: 'Mulish';
         margin-right: 10px;
       }
       

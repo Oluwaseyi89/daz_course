@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../../styles/coursedetailprice.css';
+import { FaCheck } from 'react-icons/fa6';
 
 function CourseDetailPrice (props) {
 
@@ -14,11 +15,11 @@ function CourseDetailPrice (props) {
           <div className="course-includes">
             <p>This course includes:</p>
             <ul>
-              <li>5 hours on demand video</li>
-              <li>15 articles</li>
-              <li>4 downloadable resources</li>
-              <li>Full lifetime access</li>
-              <li>Access on mobile and tv</li>
+              <li><FaCheck/>5 hours on demand video</li>
+              <li><FaCheck/>15 articles</li>
+              <li><FaCheck/>4 downloadable resources</li>
+              <li><FaCheck/>Full lifetime access</li>
+              <li><FaCheck/>Access on mobile and tv</li>
             </ul>
           </div>
     

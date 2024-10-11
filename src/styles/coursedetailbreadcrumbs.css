@@ -12,19 +12,53 @@
     .coursedetailbreadcrumbs {
         font-size: 14px;
         color: #7d7d7d; /* Light gray color similar to the one in the image */
+        /* display: grid; */
+        /* grid-template-columns: 33.33% 33.33% 33.33%; */
         display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: center;
         /* border:  solid red 1px; */
-        width: 300px;
+        width: 600px;
         
         /* top: 0; */
       }
-      
-      .coursedetailbreadcrumbs span {
-        margin-right: 5px;
-        height: 35px;
-        width: fit-content;
+
+      .bread-crumb-btn {
+        /* border: solid blue 1px; */
+        /* display: grid; */
+        /* grid-template-columns: 20% 80%; */
+        /* width: minmax(80px, fit-content); */
+        min-width: 80px;
+        margin-right: 25px;
+        height: 100%;
+        border-radius: 8px;
+
         display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        padding-right: 8px;
+      }
+
+      .bread-crumb-btn:hover {
+        /* background-color: silver; */
+       border: solid var(--active-nav-btn-color) 1px;
+        box-shadow: 1px 1px 2px 1px var(--active-nav-btn-color);
+        color: var(--active-nav-btn-color);
+        font-family: 'Mulish Bold';
+
+      }
+      
+      .bread-crumb-btn  span {
+        /* margin-right: 5px; */
+        height: 35px;
+        align-items: center;
+        justify-self: left;
+        min-width: 20px;
+        display: flex;
+        /* border: solid orange 1px; */
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -32,12 +66,18 @@
 
       .coursedetailbreadcrumbs span:hover {
         /* background-color: var(--active-nav-btn-color); */
+        /* color: var(--active-nav-btn-color) */
+
       }
       
       .separator {
         margin-right: 5px;
         color: #a0a0a0; /* Slightly darker shade for the separators */
       }
+
+      /* .separator:hover {
+        color: var(--active-nav-btn-color);
+      } */
       
 
 }
@@ -54,15 +94,15 @@
 
 @media screen and (min-width: 1024px) {
 
-  .coursedetailbreadcrumbs {
+  /* .coursedetailbreadcrumbs {
     font-size: 14px;
-    color: #7d7d7d; /* Light gray color similar to the one in the image */
+    color: #7d7d7d; Light gray color similar to the one in the image
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    /* border:  solid red 1px; */
+    border:  solid red 1px;
     width: 500px;
-  }
+  } */
   
 
 }

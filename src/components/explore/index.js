@@ -9,6 +9,7 @@ import CourseDescription from './CourseDescription'
 import CourseDetailBreadCrumbs from './CourseDetailBreadCrumbs'
 import ReviewCard from './ReviewCard'
 import CourseDetailPage from './CourseDetailPage'
+import StudentRating from './StudentRating'
 
 export {
     Explore, 
@@ -21,5 +22,6 @@ export {
     CourseDescription,
     CourseDetailBreadCrumbs,
     ReviewCard,
-    CourseDetailPage
+    CourseDetailPage,
+    StudentRating
 }

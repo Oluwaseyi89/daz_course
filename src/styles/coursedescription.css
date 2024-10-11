@@ -11,20 +11,24 @@
 
     .coursedescription {
         padding: 20px;
-        background-color: #fff;
+        /* background-color: #fff; */
+        background-color: var(--card-background-color);
         width: 100%;
       }
       
-      .description h2 {
-        font-size: 24px;
+      .coursedescription h2 {
+        font-size: 31px;
+        font-family: 'Mulish Bold';
         margin-bottom: 15px;
       }
       
-      .description p {
+      .coursedescription p {
         font-size: 16px;
+        font-family: 'Mulish';
         line-height: 1.5;
         color: #4a4a4a;
         margin-bottom: 15px;
+        text-align: justify;
       }
       
       .see-more {
@@ -32,6 +36,7 @@
         border: none;
         color: #6a0dad;
         font-size: 16px;
+        font-family: 'Mulish';
         cursor: pointer;
         text-decoration: underline;
       }

@@ -19,6 +19,7 @@ const navigate = useNavigate();
 
 
   useEffect(() => {
+    
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
       setCurrentTxtColorIndex((prevIndex) => (prevIndex + 1) % textColors.length);

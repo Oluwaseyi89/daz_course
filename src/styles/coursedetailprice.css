@@ -57,7 +57,7 @@
       }
       
       .course-includes li::before {
-        content: '✔️';
+        /* content: '✔️'; */
         margin-right: 8px;
         color: #20c997;
       }

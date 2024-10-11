@@ -1,11 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import '../../styles/coursecard.css';
 import { courseInCart } from '../../utils';
 
 function CourseCard ({ addToCart, removeFromCart, item,  image, title, author, rating, reviews, price, originalPrice, isBestSeller }) {
   
-  
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     if(!courseInCart(item)) {
@@ -19,9 +20,13 @@ function CourseCard ({ addToCart, removeFromCart, item,  image, title, author, r
       window.location.reload();
     }
   }
+const handleCardImageClick = () => {
+  navigate("/course-detail-page", {state: {...item}})
+}
+
     return (
         <div className="coursecard">
-          <div className="sm-card-image-dashboard">
+          <div className="sm-card-image-dashboard" onClick={() => handleCardImageClick()}>
             {isBestSeller && <span className="sm-best-seller-badge">Best Sellers</span>}
             <img src={image} alt={title} />
           </div>

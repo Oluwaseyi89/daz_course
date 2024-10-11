@@ -60,11 +60,6 @@ function Explore (props) {
                     })
                 }
            </div>
-           {/* <WhatYouWillLearn/>
-           <CourseRequirements/>
-           <CourseDescription/>
-           <CourseDetailBreadCrumbs/>
-           <ReviewCard/> */}
            <div style={{height: "80px"}}></div>
         </div>
     );

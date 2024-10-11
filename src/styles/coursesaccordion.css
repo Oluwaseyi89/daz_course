@@ -13,16 +13,20 @@
     .coursesaccordion {
         width: 100%;
         background-color: #f8f8fc;
-        border-radius: 10px;
+        /* border: solid orange 1px; */
+        /* border-radius: 10px; */
         padding: 10px;
       }
       
       .accordion-item {
-        background: #fff;
-        border-radius: 8px;
-        margin-bottom: 10px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        /* background: #fff; */
+        background-color: var(--card-background-color);
+        /* border-radius: 8px; */
+        /* margin-bottom: 10px; */
+        border-bottom: solid 1px silver;
+        /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
         overflow: hidden;
+        font-family: 'Mulish';
       }
       
       .accordion-header {
@@ -32,6 +36,7 @@
         padding: 15px;
         cursor: pointer;
         font-size: 16px;
+        font-family: 'Mulish Bold';
         font-weight: 500;
       }
       
@@ -42,6 +47,7 @@
       .accordion-content {
         padding: 10px 15px;
         border-top: 1px solid #e6e6e6;
+        font-family: 'Mulish';
         background-color: #fafafa;
       }
       
@@ -50,7 +56,10 @@
         justify-content: space-between;
         padding: 8px 0;
         border-bottom: 1px solid #e6e6e6;
+        font-family: 'Mulish';
         font-size: 14px;
+        cursor: pointer;
+
       }
       
       .lesson-item:last-child {
@@ -65,6 +74,10 @@
       .lesson-duration {
         color: #888;
         font-size: 12px;
+      }
+
+      .video-icon {
+        margin-right: 5px;
       }
       
 
