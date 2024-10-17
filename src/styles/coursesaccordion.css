@@ -12,7 +12,7 @@
    
     .coursesaccordion {
         width: 100%;
-        background-color: #f8f8fc;
+        background-color: var(--card-background-color);
         /* border: solid orange 1px; */
         /* border-radius: 10px; */
         padding: 10px;

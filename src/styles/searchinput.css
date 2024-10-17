@@ -27,6 +27,8 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+                /* box-shadow: 0 0 6.25px 1.875px #48abe0; */
+
       }
 
       /* .searchinput:focus {
@@ -44,11 +46,17 @@
         outline: none;
       }
 
+      .search-input:focus {
+                /* box-shadow: 0 0 6.25px 1.875px #48abe0; */
+
+      }
+
    
       
       .search-icon {
         /* position: absolute; */
         width: 10%;
+        background-color: var(--card-background-color);
         height: 45px;
         border-radius: 5px 0px 0px 5px;
         /* border: solid red 1px; */

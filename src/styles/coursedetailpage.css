@@ -9,7 +9,7 @@
         margin-top: 80px;
         box-sizing: border-box;
         width: 100%;
-        border: solid blue 1px;
+        /* border: solid blue 1px; */
         height: fit-content;
 
     }
@@ -21,9 +21,10 @@
 
      .coursedetailpage {
         /* border: solid red 1px; */
-        height: calc(100vh - 80px);
+        min-height: calc(100vh - 80px);
         width: 100%;
     }
+
 
     .bread-crumbs-container {
         display: flex;
@@ -31,7 +32,7 @@
         justify-content: flex-start;
         align-items: center;
         /* border: solid red 1px; */
-        padding-left: 35px;
+        padding-left: 5px;
 
         height: 50px;
         width: 100%;
@@ -42,7 +43,10 @@
     }
 
     .course-detail-middle {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         margin-top: 80px;
         box-sizing: border-box;
         width: 100%;
@@ -69,6 +73,40 @@
         border-radius: 15px;
         padding: 10px;
         box-shadow: 1px 1px 2px 1px gray;
+    }
+
+    .course-detail-right {
+        width: 95%;
+        /* margin-left: 5%; */
+        order: 1;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        display: flex;
+        padding-left: 2.5%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .course-detail-left {
+        width: 95%;
+        /* margin-left: 2.5%; */
+        order: 2;
+        display: flex;
+        padding-left: 2.5%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .course-detail-middle {
+        display: flex;
+        width: 100%;
+        /* margin-left: 2.5%; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
     }
 
     .accordion-title {
@@ -104,6 +142,7 @@
         width: 100%;
         height: fit-content;
         margin-top: 25px;
+        background-color: var(--content-view-background-color);
     }
 
 }
@@ -116,22 +155,39 @@
 
     }
 
+    .bread-crumbs-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        /* border: solid red 1px; */
+        padding-left: 35px;
+
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        background-color: white;
+        z-index: 1;
+        box-shadow: 1px 1px 2px 1px gray;
+    }
+
     .course-detail-middle {
         display: block;
         margin-top: 80px;
         box-sizing: border-box;
-        width: 100%;
+        max-width: 100%;
         height: fit-content;
 
     }
 
     .course-detail-left {
         float: left;
-        width: 70%;
+        width: 55%;
         display: flex;
+        /* padding-left: 0px; */
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         /* border: solid green 1px; */
         margin-bottom: 30px;
 
@@ -139,14 +195,19 @@
 
     .course-detail-right {
         float: right;
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+        width: 45%;
+        margin-top: 0px;
+        /* padding-left: -55px; */
+        display: block;
+
+        /* flex-direction: column;
+        justify-content: left;
+        align-items: flex-start; */
         /* border: solid red 1px; */
 
     }
+
+  
 
 }
 
@@ -156,9 +217,25 @@
      .coursedetailpage {
         width: 100%;
         height: fit-content;
-        height: calc(100vh - 80px);
+        min-height: calc(100vh - 80px);
 
     
+    }
+
+    .bread-crumbs-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        /* border: solid red 1px; */
+        padding-left: 35px;
+
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        background-color: white;
+        z-index: 1;
+        box-shadow: 1px 1px 2px 1px gray;
     }
 
     .course-detail-middle {
@@ -172,9 +249,10 @@
 
     .course-detail-left {
         float: left;
-        width: 70%;
+        width: 60%;
         display: flex;
         flex-direction: column;
+        padding: 0px;
         /* justify-content: space-evenly; */
         align-items: center;
         /* border: solid green 1px; */
@@ -184,9 +262,10 @@
 
     .course-detail-right {
         float: right;
-        width: 30%;
+        width: 40%;
         display: flex;
-        flex-direction: column;
+        padding: 0px;
+        flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
         /* border: solid red 1px; */

@@ -11,6 +11,7 @@ export const courseLearning = [
             {
                 lessonId: 1,
                 lessonTitle: "",
+                lessonVideoId: "VPvVD8t02U8",
                 lessonDuration: "",
                 isCompleted: true,
                 completionDate: ""
@@ -46,6 +47,7 @@ export const courseLearning = [
             {
                 lessonId: 1,
                 lessonTitle: "",
+                lessonVideoId: "URtsnESYcPk",
                 lessonDuration: "",
                 isCompleted: true,
                 completionDate: ""
@@ -74,6 +76,7 @@ export const courseLearning = [
             {
                 lessonId: 1,
                 lessonTitle: "",
+                lessonVideoId: "ZBCUegTZF7M",
                 lessonDuration: "",
                 isCompleted: true,
                 completionDate: ""
@@ -112,6 +115,7 @@ export const courseLearning = [
             {
                 lessonId: 1,
                 lessonTitle: "",
+                lessonVideoId: "oNIvnCNzAqU",
                 lessonDuration: "",
                 isCompleted: true,
                 completionDate: ""

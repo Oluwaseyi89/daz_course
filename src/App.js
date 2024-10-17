@@ -1,12 +1,12 @@
-import { createContext, useCallback, useReducer, useEffect } from 'react';
-import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createContext, useCallback, useReducer, useEffect, useState } from 'react';
+import {BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import './styles/header.css'
 import { Header, AsideNav, ContentView } from './components';
 import { appReducer, initialAppState } from './reducers';
 import {Dashboard} from './components/dashboard';
-import {CourseDetailPage, Explore} from './components/explore';
-import {MyLearning} from './components/mylearning';
+import {CourseDetailPage, Explore, InstructorProfilePage} from './components/explore';
+import {MyLearning, VideoPage} from './components/mylearning';
 import{Settings} from './components/settings'
 
 
@@ -18,8 +18,9 @@ export const AppContext = createContext();
 function App() {
 
   let currentPath = window.location.pathname;
-
   
+
+  const [showMenu, setShowMenu] = useState(false);
 
 
  
@@ -82,7 +83,14 @@ function App() {
  
   return (
     <div className="App">
-      <AppContext.Provider value={{appState, navBtnClick, addToCart, removeFromCart}}>
+      <AppContext.Provider value={{
+        appState, 
+        navBtnClick, 
+        addToCart, 
+        removeFromCart, 
+        showMenu,
+        setShowMenu
+        }}>
        <Router>
         <Header/>
         <AsideNav/>
@@ -94,6 +102,8 @@ function App() {
             <Route path='/mylearning' element={<MyLearning/>}/>
             <Route path='/settings' element={<Settings/>}/>
             <Route path='/course-detail-page' element={<CourseDetailPage/>}/>
+            <Route path='/instructor-profile-page' element={<InstructorProfilePage/>}/>
+            <Route path='/video-page' element={<VideoPage/>}/>
           </Routes>
         </ContentView>
        </Router>

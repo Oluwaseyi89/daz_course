@@ -7,11 +7,10 @@ import TabNavButton from "./TabNavButton";
 import Notifications from "./Notifications";
 import HamburgerMenuItems from "./HamburgerMenuItems";
 
-function Header ({}) {
+function Header () {
 
-    const {navBtnClick, appState} = useContext(AppContext);
+    const {navBtnClick, appState, showMenu, setShowMenu} = useContext(AppContext);
 
-    const [showMenu, setShowMenu] = useState(false);
 
     const [showNotification, setShowNotification] = useState(false);
 
@@ -63,7 +62,7 @@ function Header ({}) {
                     </div>
                 </div>
                 <div className="hamburger-menu" onClick={() => handleShowMenu()}>
-                    <img alt="menu-ico" src="../assets/images/menu_icon.svg"/>
+                    <img alt="menu-ico" src="../assets/images/hoz_menu_icon.svg"/>
                 </div>
                 {
                     showMenu ? (

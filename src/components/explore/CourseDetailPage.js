@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import '../../styles/coursedetailpage.css';
@@ -11,59 +11,29 @@ import CourseDescription from './CourseDescription';
 import ReviewCard from './ReviewCard';
 import { CoursesAccordion } from '../mylearning';
 import StudentRating from './StudentRating';
+import { AppContext } from '../../App';
 
 function CourseDetailPage (props) {
 
     const location = useLocation();
 
-    // {
-    //     id: 12,
-    //     courseTitle: "Java Testing",
-    //     courseImage: "../assets/images/java_testing_training.webp",
-    //     category: "Software Development",
-    //     subCategory: "Code Testing",
-    //     subCategoryBranch: "",
-    //     currentLesson: "",
-    //     lessons: [
-    //         {
-    //             lessonId: 1,
-    //             lessonTitle: "",
-    //             lessonDuration: "",
-    //             isCompleted: false,
-    //             completionDate: ""
-    //         },
-    //         {
-    //             lessonId: 2,
-    //             lessonTitle: "",
-    //             lessonDuration: "",
-    //             isCompleted: false,
-    //             completionDate: ""
-    //         },
-    //         {
-    //             lessonId: 3,
-    //             lessonTitle: "",
-    //             lessonDuration: "",
-    //             isCompleted: false,
-    //             completionDate: ""
-    //         },
-    //     ],
-    //     instructor: "",
-    //     instructorImage: "",
-    //     coursePrice: 0,
-    //     originalPrice: 0,
-    //     averageRating: 4,
-    //     numberOfReviews: 500,
-    // }
+    const breadcrumbTitleRef = useRef();
 
-    // image, 
-    // title, 
-    // rating, 
-    // reviews, 
-    // students, 
-    // author, 
-    // lastUpdate, 
-    // language, 
-    // subtitles 
+    const {showMenu} = useContext(AppContext)
+
+    
+
+    useEffect(() => {
+        const setBreadcrumbTitle = () => {
+            if(showMenu) {
+                breadcrumbTitleRef.current.style.position = "static";
+            } else {
+                breadcrumbTitleRef.current.style.position = "fixed";
+            }
+        }
+        setBreadcrumbTitle();
+        return () => {}
+    },[showMenu]);
 
     const {
         courseImage, 
@@ -74,9 +44,11 @@ function CourseDetailPage (props) {
     
     } = location.state;
 
+    const {...item} = location.state;
+
     return (
         <div className='coursedetailpage'>
-            <div className='bread-crumbs-container'>
+            <div ref={breadcrumbTitleRef} className='bread-crumbs-container'>
                 <CourseDetailBreadCrumbs/>
             </div>
             <div className='course-detail-middle'>
@@ -108,7 +80,7 @@ function CourseDetailPage (props) {
                     </div>
                 </div>
                 <div className='course-detail-right'>
-                    <CourseDetailPrice/>
+                    <CourseDetailPrice item={item}/>
                 </div>
             </div>
             <div style={{clear: "both"}}></div>

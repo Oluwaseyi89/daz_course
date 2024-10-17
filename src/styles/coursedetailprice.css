@@ -10,7 +10,8 @@
 @media screen and (min-width: 320px) {
 
     .coursedetailprice {
-        background-color: #f9f9f9; /* Light background */
+        /* background-color: #f9f9f9; Light background */
+        background-color: var(--card-background-color);
         padding: 20px;
         border-radius: 10px;
         width: 300px;
@@ -80,11 +81,13 @@
       .add-to-cart {
         background-color: #6c63ff; /* Purple background for Add to Cart */
         color: white;
+        cursor: pointer;
       }
       
       .buy-now {
         background-color: white;
         color: #6c63ff;
+        cursor: pointer;
         border: 2px solid #6c63ff; /* Purple border for Buy Now */
       }
       
@@ -98,10 +101,10 @@
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 672px) {
 
      .coursedetailprice {
-
+      margin-right: -25px;
     }
 
 }

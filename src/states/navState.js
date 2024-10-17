@@ -28,4 +28,5 @@ export const navState = [
         iconUrl: ["./assets/images/active_settings_icon.svg", "./assets/images/inactive_settings_icon.svg", "./assets/images/active_sm_settings_icon.svg"],
         route: "/settings"
     },
+    
 ]

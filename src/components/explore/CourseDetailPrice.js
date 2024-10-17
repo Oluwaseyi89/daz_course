@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import '../../styles/coursedetailprice.css';
 import { FaCheck } from 'react-icons/fa6';
+import { AppContext } from '../../App';
+import { courseInCart } from '../../utils';
 
-function CourseDetailPrice (props) {
+function CourseDetailPrice ({item}) {
+
+  let {appState, addToCart, removeFromCart} = useContext(AppContext);
+
+
+  const handleAddToCart = () => {
+    if(!courseInCart(item)) {
+      console.log(courseInCart(item))
+      console.log(item)
+      addToCart(item);
+      window.location.reload();
+    }  else {
+      console.log(courseInCart(item));
+      removeFromCart(item);
+      window.location.reload();
+    }
+  }
+
 
     return (
         <div className="coursedetailprice">
@@ -24,7 +43,8 @@ function CourseDetailPrice (props) {
           </div>
     
           <div className="actions">
-            <button className="add-to-cart">Add to Cart</button>
+            <button onClick={() => handleAddToCart()} className="add-to-cart">{courseInCart(item) ? "Remove Course" : "Add to cart"}</button>
+
             <button className="buy-now">Buy Now</button>
           </div>
     

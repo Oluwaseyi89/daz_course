@@ -33,6 +33,7 @@
         margin-right: 25px;
         height: 100%;
         border-radius: 8px;
+        
 
         display: flex;
         flex-direction: row;
@@ -44,12 +45,20 @@
 
       .bread-crumb-btn:hover {
         /* background-color: silver; */
-       border: solid var(--active-nav-btn-color) 1px;
-        box-shadow: 1px 1px 2px 1px var(--active-nav-btn-color);
+       /* border: solid var(--active-nav-btn-color) 1px; */
+        /* box-shadow: 1px 1px 2px 1px var(--active-nav-btn-color); */
+        box-shadow: 1px 1px 3px 1px gray;
         color: var(--active-nav-btn-color);
         font-family: 'Mulish Bold';
+        background-color: silver;
+        /* opacity: 0.6; */
 
       }
+
+     .bread-crumb-btn  span:hover {
+      color: var(--active-nav-btn-color);
+
+     }
       
       .bread-crumb-btn  span {
         /* margin-right: 5px; */
@@ -62,6 +71,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        /* z-index: 1; */
       }
 
       .coursedetailbreadcrumbs span:hover {
@@ -83,10 +93,44 @@
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 672px) {
 
      .coursedetailbreadcrumbs {
 
+    }
+
+    .bread-crumb-btn {
+      /* border: solid blue 1px; */
+      /* display: grid; */
+      /* grid-template-columns: 20% 80%; */
+      /* width: minmax(80px, fit-content); */
+      min-width: 80px;
+      margin-right: 25px;
+      height: 100%;
+      border-radius: 8px;
+      
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      padding-right: 8px;
+    }
+
+    .bread-crumb-btn  span {
+      /* margin-right: 5px; */
+      height: 35px;
+      align-items: center;
+      justify-self: left;
+      min-width: 20px;
+      font-size: 16px;
+      display: flex;
+      /* border: solid orange 1px; */
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      /* z-index: 1; */
     }
 
 }
@@ -103,6 +147,25 @@
     border:  solid red 1px;
     width: 500px;
   } */
+
+  .bread-crumb-btn {
+    /* border: solid blue 1px; */
+    /* display: grid; */
+    /* grid-template-columns: 20% 80%; */
+    /* width: minmax(80px, fit-content); */
+    min-width: 80px;
+    margin-right: 25px;
+    height: 100%;
+    border-radius: 8px;
+    
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    padding-right: 8px;
+  }
   
 
 }

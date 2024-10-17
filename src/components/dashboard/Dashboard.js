@@ -1,4 +1,4 @@
-import React, {useContext, useState } from 'react';
+import React, {useContext, useMemo, useState } from 'react';
 
 import { AppContext } from '../../App';
 
@@ -22,18 +22,15 @@ function Dashboard (props) {
 
     const [seeAll, setSeeAll] = useState(false);
 
-    let filterResult = compareAndFilterCourses(courses, courseLearning, "courseTitle");
-    // let filterCat = compareAndReturnSimilarArray(filterResult, courseLearning, "subCategory");
-    let newCat = compareAndFilterCourses(filterResult, courseLearning, "subCategory")
+    const filteredRecommendations = useMemo(() => {
+        let filterResult = compareAndFilterCourses(courses, courseLearning, "courseTitle");
+        return compareAndFilterCourses(filterResult, courseLearning, "subCategory");
+      }, [courses, courseLearning]);
 
-    // console.log(filterResult);
-    // console.log(filterCat)
-    // console.log(newCat)
+    const toggleSeeAll = () => setSeeAll(!seeAll);
 
-    const toggleSeeAll = () => {
-        if (!seeAll) setSeeAll(true);
-        else setSeeAll(false);
-    }
+    const coursesToShow = seeAll ? courseLearning : courseLearning.slice(0, 2);
+
 
     return (
         <div className='dashboard'>
@@ -44,23 +41,20 @@ function Dashboard (props) {
             </div>
             <div className='dashboard-learning'>
                 <div className='dash-learning-left'>
-                    { seeAll ? (
-
-                        courseLearning.map(item => {
-                            const totalCompleted = item.lessons.filter(lesson => lesson.isCompleted);
-                            return (
-                                <CourseProgressCard key={item.courseTitle} image={item.courseImage} title={item.courseTitle} subtitle={item.currentLesson} totalCompleted={totalCompleted.length} totalLessons={item.lessons.length}/>
-                            )
-                        })
-                    ): (
-                        courseLearning.slice(0, 2).map(item => {
-                            const totalCompleted = item.lessons.filter(lesson => lesson.isCompleted);
-                            return (
-                                <CourseProgressCard key={item.courseTitle} image={item.courseImage} title={item.courseTitle} subtitle={item.currentLesson} totalCompleted={totalCompleted.length} totalLessons={item.lessons.length}/>
-                            )
-                        })
-                    )
-                    }
+                    {coursesToShow.map(item => {
+                        const totalCompleted = item.lessons.filter(lesson => lesson.isCompleted);
+                        return (
+                            <CourseProgressCard
+                                key={item.courseTitle}
+                                item={item}
+                                image={item.courseImage}
+                                title={item.courseTitle}
+                                subtitle={item.currentLesson}
+                                totalCompleted={totalCompleted.length}
+                                totalLessons={item.lessons.length}
+                            />
+                        );
+                    })}
                 </div>
                 <div className='dash-learning-right'>
                     <MyProgress/>
@@ -70,7 +64,7 @@ function Dashboard (props) {
             <div className='recommended-title'><span>Recommendations</span></div>
             <div className='recommended-courses'>
                 {
-                    newCat.map(course => {
+                    filteredRecommendations.map(course => {
                         return (
                             <CourseCard key={course.id} item={course} addToCart={addToCart} removeFromCart={removeFromCart}  image={course.courseImage} title={course.courseTitle} author={course.instructor} rating={course.averageRating} reviews={course.numberOfReviews} price={course.coursePrice} originalPrice={course.originalPrice} isBestSeller={true} />
                         )

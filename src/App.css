@@ -4,9 +4,10 @@
   --active-nav-text-color: #F7F7FC;
   --inactive-nav-icon-color: #9A9AB0;
   --active-nav-icon-color: #FFFFFF;
+  --card-background-color: #FFFFFF;
   --app-black-text-color: #11142D;
   --app-green-text-color: #42BDA1;
-  --card-background-color: #F8F8Fc;
+  --content-view-background-color: #F8F8Fc;
 }
 
 @font-face {
@@ -56,6 +57,21 @@
 .app-header {
   position: sticky;
   top: 0;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+@keyframes scaleCard {
+  from {
+    transform: scale(1, 1);
+  }
+
+  to {
+    transform: scale(1.075, 1.075);
+  }
+  
 }
 
 

@@ -26,6 +26,10 @@
         min-height: 500px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
     }
 }
 
@@ -97,9 +101,12 @@
         min-height: 500px;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
+        gap: 25px;
+        /* padding: 5px; */
         margin-bottom: 100px;
+        /* border: solid red 1px; */
     }
 
     .no-result {
@@ -138,6 +145,7 @@
         min-height: 500px;
         display: grid;
         grid-template-columns: 50% 50%;
+        row-gap: 30px;
         justify-content: center;
         align-items: center;
     }
@@ -165,6 +173,7 @@
         min-height: 500px;
         display: grid;
         grid-template-columns: 33.33% 33.33% 33.33%;
+        row-gap: 30px;
         justify-content: center;
         align-items: center;
     }

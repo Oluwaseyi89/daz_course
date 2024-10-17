@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
 import '../styles/smallnavbtn.css';
+import { AppContext } from '../App';
 
 function SmallNavBtn ({item, navBtnClick}) {
 
     const {id, route, iconUrl, isActive, title} = item;
+    const {showMenu, setShowMenu} = useContext(AppContext);
 
     const navigate = useNavigate();
 
     function handleNavBtnClick () {
         navBtnClick(id);
         navigate(route);
-
+        setShowMenu(false);
 
     }
 

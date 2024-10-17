@@ -1,0 +1,148 @@
+@media screen and (max-width: 320px) {
+
+     .settingsmenu {
+
+    }
+
+}
+
+
+@media screen and (min-width: 320px) {
+
+    .settingsmenu {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 0px 0px 0px 8px;
+        width: 150px;
+        /* border: solid red 1px; */
+
+      }
+      
+      .menu-list {
+        list-style: none;
+        padding: 0;
+
+        /* display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        justify-content: center;
+        align-content: flex-start; */
+      }
+      
+      .menu-item {
+        font-size: 14px;
+        color: #888;
+        padding: 8px 0;
+        cursor: pointer;
+      }
+      
+      .menu-item:hover {
+        color: #000;
+      }
+      
+      .menu-heading {
+        font-size: 16px;
+        color: #000;
+        font-weight: bold;
+        padding-bottom: 12px;
+        cursor: default;
+      }
+      
+      .close-account {
+        color: #ff4a57;
+      }
+      
+      .close-account:hover {
+        color: #ff2a37;
+      }
+      
+
+}
+
+
+@media screen and (min-width: 672px) {
+
+     .settingsmenu {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 200px;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-item {
+    font-size: 14px;
+    color: #888;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    color: #000;
+  }
+  
+  .menu-heading {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    padding-bottom: 12px;
+    cursor: default;
+  }
+  
+  .close-account {
+    color: #ff4a57;
+  }
+  
+  .close-account:hover {
+    color: #ff2a37;
+  }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+  .settingsmenu {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 200px;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-item {
+    font-size: 14px;
+    color: #888;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    color: #000;
+  }
+  
+  .menu-heading {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    padding-bottom: 12px;
+    cursor: default;
+  }
+  
+  .close-account {
+    color: #ff4a57;
+  }
+  
+  .close-account:hover {
+    color: #ff2a37;
+  }
+
+}
+

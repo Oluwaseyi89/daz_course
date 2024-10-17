@@ -1,10 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import '../../styles/courseprogresscard.css';
 
-function CourseProgressCard ({ image, title, subtitle, totalCompleted, totalLessons }) {
+function CourseProgressCard ({ image, item, title, subtitle, totalCompleted, totalLessons }) {
 
     const progressPercentage = (totalCompleted / totalLessons) * 100;
+    const navigate = useNavigate();
+
+    const handleResumeBtnClick = () => {
+        navigate("/video-page", {state: {...item}});
+    }
 
     return (
         <div className="courseprogresscard">
@@ -13,8 +19,8 @@ function CourseProgressCard ({ image, title, subtitle, totalCompleted, totalLess
         </div>
         <div className="progress-card-content">
             <div className='progress-title-text'>
-                <h3 className="card-title">{title}</h3>
-                <p className="card-subtitle">{subtitle}</p>
+                <h3 className="progress-card-title">{title}</h3>
+                <p className="progress-card-subtitle">{subtitle}</p>
             </div>
             <div className="progress-info">
                 <span className="progress-text">
@@ -29,7 +35,7 @@ function CourseProgressCard ({ image, title, subtitle, totalCompleted, totalLess
             </div>
         </div>
         <div className="resume-button">
-            <button>Resume</button>
+            <button onClick={() => handleResumeBtnClick()}>Resume</button>
         </div>
         </div>
     );

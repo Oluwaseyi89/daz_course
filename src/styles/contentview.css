@@ -19,6 +19,7 @@
     .contentview {
        /* border: solid green 1px; */
        width: 100%;
+       background-color: var(--content-view-background-color);
        min-height: calc(100vh - 80px);
        overflow-x: hidden;
        margin-top: 80px;

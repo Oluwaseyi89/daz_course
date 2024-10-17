@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import { FaCartPlus } from 'react-icons/fa6';
 
 import '../../styles/explore.css';
@@ -19,18 +19,60 @@ function Explore (props) {
 
     const [searchPerformed, setSearchPerformed] = useState(false);
 
+    let [itemVisible, setItemVisible] = useState(false);
+
+    let resultsRef = useRef();
+
     const rawCachedSearch = localStorage.getItem("currentSearch") || {};
 
     const cachedSearch = rawCachedSearch ? JSON.parse(rawCachedSearch): {};
+    console.log(cachedSearch.results);
 
     useEffect(() => {
         setSearchResult(cachedSearch.results);
-        return () => {}
-    },[cachedSearch.results]);
+        return () => {
+            setSearchResult([]);
+        }
+    },[]);
+
+    //   let options = {
+    //         root: null,
+    //         rootMargin: "0px",
+    //         threshold: 0.2
+    //     };
+
+    //     let obsCallBack = (entries) => {
+    //        let [entry] = entries;
+    //        if(entry.isIntersecting) console.log("intersecting")
+    //        setItemVisible(entry.isIntersecting);
+    //     }
+
 
    
 
     let {appState, addToCart, removeFromCart} = useContext(AppContext);
+
+    let itemsContainer = document.getElementById('items-container');
+
+    // useEffect(() => {
+      
+    //     // let currenItems = resultsRef.current;
+        
+    //     let observer = new IntersectionObserver(obsCallBack, options);
+
+    //     if(itemsContainer) {
+    //         console.log(itemsContainer)
+    //         observer.observe(itemsContainer);
+    //     }
+
+    //     return () => {
+    //         if(itemsContainer){
+    //             observer.unobserve(itemsContainer)
+    //         }  
+    //     }
+    // });
+
+    
 
    
    
@@ -41,7 +83,7 @@ function Explore (props) {
            {
             searchResult.length > 0 ? <div className='result-heading'><span>Your Results</span> <span className='cart-container'><span >{appState.cartState.length}</span><span><FaCartPlus/></span></span></div> : ""
            }
-           <div className='search-result-container'>
+           <div ref={resultsRef} id='items-cotainer' className='search-result-container'>
                 { 
                 searchResult.length < 1 
                 ?( searchPerformed ? (

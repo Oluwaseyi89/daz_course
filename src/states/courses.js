@@ -12,6 +12,7 @@ export const courses = [
                 lessonId: 1,
                 lessonTitle: "",
                 lessonDuration: "",
+                lessonVideoId: "VPvVD8t02U8",
                 isCompleted: true,
                 completionDate: ""
             },

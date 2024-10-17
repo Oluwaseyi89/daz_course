@@ -490,7 +490,7 @@
     .user-avatar {
         width: 45px;
         height: 45px;
-        border: solid var(--light-separator-color) 1.5px;
+        /* border: solid var(--light-separator-color) 1.5px; */
         border-radius: 22.5px;
         display: flex;
         justify-content: center;
@@ -677,8 +677,8 @@
     .user-avatar {
         width: 60px;
         height: 60px;
-        border: solid var(--active-nav-btn-color) 1.5px;
-        border-radius: 30px;
+        /* border: solid var(--active-nav-btn-color) 1.5px; */
+        border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -687,7 +687,7 @@
     .user-avatar img {
         height: 50px;
         width: 50px;
-        border-radius: 30px;
+        border-radius: 50%;
     }
     
 
