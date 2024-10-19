@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/daz_course/static/css/main.f0c660e3.css",
+    "main.js": "/daz_course/static/js/main.6fcb0f7e.js",
+    "static/js/453.d6a2c2da.chunk.js": "/daz_course/static/js/453.d6a2c2da.chunk.js",
+    "static/media/Mulish-Regular.ttf": "/daz_course/static/media/Mulish-Regular.06ce9c37c31ae94797a2.ttf",
+    "static/media/Mulish-Bold.ttf": "/daz_course/static/media/Mulish-Bold.1f6c3935d7359190d7dd.ttf",
+    "index.html": "/daz_course/index.html",
+    "main.f0c660e3.css.map": "/daz_course/static/css/main.f0c660e3.css.map",
+    "main.6fcb0f7e.js.map": "/daz_course/static/js/main.6fcb0f7e.js.map",
+    "453.d6a2c2da.chunk.js.map": "/daz_course/static/js/453.d6a2c2da.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0c660e3.css",
+    "static/js/main.6fcb0f7e.js"
+  ]
+}
