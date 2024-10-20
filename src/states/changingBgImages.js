@@ -1,6 +1,6 @@
 import training_students from "../assets/image/training_students.jpg"
-import training_students_2 from "./assets/images/training_students_2.jpg"
-import training_students_3 from "./assets/images/training_students_3.jpg"
+import training_students_2 from "../assets/images/training_students_2.jpg"
+import training_students_3 from "../assets/images/training_students_3.jpg"
 
 // export const changingBgImages = [
 //     "../assets/images/training_students.jpg", 
