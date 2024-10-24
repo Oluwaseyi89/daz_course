@@ -7,6 +7,7 @@ import { changingTextColors } from "./changingBgImages";
 import { changingParagraphTxtColors } from "./changingBgImages";
 import { cartStorageKey } from "./cartState";
 import { userState } from "./userState";
+import { authState, AUTH_STATE_KEY, setAuthUser } from "./authState";
 
 
 export {navState, 
@@ -18,5 +19,8 @@ export {navState,
     changingParagraphTxtColors,
     // cartState,
     cartStorageKey,
-    userState
+    userState,
+    authState,
+    AUTH_STATE_KEY,
+    setAuthUser
 }

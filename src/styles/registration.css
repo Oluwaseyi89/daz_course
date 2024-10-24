@@ -1,0 +1,143 @@
+@media screen and (max-width: 320px) {
+
+     .registration {
+
+    }
+
+}
+
+
+@media screen and (min-width: 320px) {
+
+    /* body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f7f7f7;
+    } */
+    
+    .registration {
+        background-color: white;
+        padding: 10px 0px 20px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Mulish';
+        font-size: 16px;
+        
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        width: 400px;
+    }
+
+    .registration form {
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+    }
+    
+    h2 {
+        text-align: center;
+        color: #6c49c1;
+        font-family: 'Mulish Bold';
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .profile-pix {
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+    }
+    
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: 'Mulish';
+    }
+
+    .form-input:focus {
+        outline: none;
+        box-shadow: 0 0 6.25px 1.875px #48abe0;
+        transform: scale(1.05, 1.1);
+    }
+    
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #6c49c1;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: 'Mulish';
+    }
+    
+    input[type="submit"]:hover {
+        /* background-color: #5a3d9f; */
+        background-color: violet;
+        transform: scale(1.05, 1.1);
+        transition: all 0.4s ease-in;
+    }
+    
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .social-icons img {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    
+    .login-link {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    
+    .login-link span {
+        color: var(--active-nav-btn-color);
+    }
+    
+    .login-link span:hover {
+        color: white;
+        cursor: pointer;
+        transition: color 0.5s ease-in;
+    }
+    
+}
+
+
+@media screen and (min-width: 768px) {
+
+     .registration {
+
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+     .registration {
+
+    }
+
+}
+

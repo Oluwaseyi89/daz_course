@@ -1,5 +1,8 @@
 import { createContext, useCallback, useReducer, useEffect, useState } from 'react';
-import {BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { collection, addDoc, getDocs, doc } from 'firebase/firestore';
+import {app, database} from './firebaseConfig/firebaseConfig.js';
+import { uploadBytesResumable, getDownloadURL, ref } from 'firebase/storage';
 import './App.css';
 import './styles/header.css'
 import { Header, AsideNav, ContentView } from './components';
@@ -8,6 +11,8 @@ import {Dashboard} from './components/dashboard';
 import {CourseDetailPage, Explore, InstructorProfilePage} from './components/explore';
 import {MyLearning, VideoPage} from './components/mylearning';
 import{Settings} from './components/settings'
+import { Login, Registration, PasswordReset, Loader } from './authpages'
+
 
 
 
@@ -47,6 +52,12 @@ function App() {
     });
   },[]);
 
+  const setAuthState = useCallback(() => {
+    return appDispatch({
+      type: "SET_AUTH_STATE"
+    });
+  },[]);
+
 
   const addToCart = useCallback((course_item) => {
     return appDispatch({
@@ -64,9 +75,10 @@ function App() {
 
   useEffect(() => {
     setCartState();
+    setAuthState();
 
     return () => {}
-  },[setCartState]);
+  },[setCartState, setAuthState]);
 
   useEffect(() => {
     setNavBtn(currentPath);
@@ -80,6 +92,10 @@ function App() {
   console.log(new Date().getMilliseconds())
   console.log(appState.cartState);
 
+  const { authState } = appState;
+  const { isAuthenticated } = authState;
+  console.log(isAuthenticated);
+
  
   return (
     <div className="App">
@@ -92,20 +108,36 @@ function App() {
         setShowMenu
         }}>
        <Router>
-        <Header/>
-        <AsideNav/>
-        <ContentView>
-          <Routes>
-            <Route path='/' element={<Dashboard/>}/>
-            <Route path='/dashboard' element={<Dashboard/>}/>
-            <Route path='/explore' element={<Explore/>}/>
-            <Route path='/mylearning' element={<MyLearning/>}/>
-            <Route path='/settings' element={<Settings/>}/>
-            <Route path='/course-detail-page' element={<CourseDetailPage/>}/>
-            <Route path='/instructor-profile-page' element={<InstructorProfilePage/>}/>
-            <Route path='/video-page' element={<VideoPage/>}/>
-          </Routes>
-        </ContentView>
+        { !isAuthenticated 
+            ? 
+            (
+              <Routes>
+                <Route path='/' element={<Login/>}/>
+                {/* <Route path='/registration' element={<Registration/>}/>
+                <Route path='/password-reset' element={<PasswordReset/>}/> */}
+                <Route path='/loader' element={<Loader/>}/>
+                <Route path='*' element={<Login/>}/>
+              </Routes>
+            )
+          :
+          (<>
+          
+          <Header/>
+          <AsideNav/>
+          <ContentView>
+            <Routes>
+              <Route path='/' element={<Dashboard/>}/>
+              <Route path='/dashboard' element={<Dashboard/>}/>
+              <Route path='/explore' element={<Explore/>}/>
+              <Route path='/mylearning' element={<MyLearning/>}/>
+              <Route path='/settings' element={<Settings/>}/>
+              <Route path='/course-detail-page' element={<CourseDetailPage/>}/>
+              <Route path='/instructor-profile-page' element={<InstructorProfilePage/>}/>
+              <Route path='/video-page' element={<VideoPage/>}/>
+            </Routes>
+          </ContentView>
+          </>)
+        }
        </Router>
       </AppContext.Provider>
     </div>

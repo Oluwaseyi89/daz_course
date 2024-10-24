@@ -1,9 +1,10 @@
-import { cartStorageKey } from "../states";
+import { authState, AUTH_STATE_KEY, cartStorageKey } from "../states";
 import { courseInCart } from "../utils";
 import { navState, notifications, courseLearning, courses } from '../states';
 
 // Define the initial app state
 export const initialAppState = {
+  authState: {},
   navState: navState,
   courseLearning: courseLearning,
   courses: courses,
@@ -13,12 +14,20 @@ export const initialAppState = {
 
 // Try to load the cart from localStorage, with fallback for errors
 let rawStore = localStorage.getItem(cartStorageKey);
+let rawAuthState = localStorage.getItem(AUTH_STATE_KEY);
+let fetchedAuthState = {};
 let courseArr = [];
 try {
   let fetchedStore = JSON.parse(rawStore);
   courseArr = fetchedStore?.my_courses || [];
 } catch (error) {
   console.error("Failed to parse localStorage", error);
+}
+
+try {
+  fetchedAuthState = JSON.parse(rawAuthState);
+} catch (error) {
+  console.error("Failed to parse locaStorage", error);
 }
 
 export default function appReducer(state = initialAppState, action) {
@@ -82,8 +91,16 @@ export default function appReducer(state = initialAppState, action) {
     return { ...state, cartState: courseArr };
   }
 
+  if (action.type === "SET_AUTH_STATE") {
+    return { ...state, authState: fetchedAuthState };
+  }
+
   return state; // Return current state for unmatched actions
 }
+
+
+
+
 
 
 // import { cartStorageKey } from "../states";

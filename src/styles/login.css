@@ -1,0 +1,148 @@
+@media screen and (max-width: 320px) {
+
+     .login {
+
+    }
+
+}
+
+
+@media screen and (min-width: 320px) {
+
+    /* LoginForm.css */
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+    font-family: 'Mulish';
+    height: 100vh;
+    /* background-color: #a780db;  */
+    /* Purple background */
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .login-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 350px;
+    /* box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1); */
+    /* box-shadow: 1px 1px 2px 1px silver; */
+    text-align: center;
+  }
+  
+  .login-card h2 {
+    color: #5e4b9e; /* Text color for heading */
+    margin-bottom: 20px;
+    font-family: 'Mulish Bold';
+    font-size: 32px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .input-group input:focus {
+    outline: none;
+    transform: scale(1.05, 1.1);
+  }
+  
+  .login-btn {
+    background-color: #6d55c0;
+    color: white;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .login-btn:hover {
+    transform: scale(1.05, 1.1);
+    background-color: violet;
+    transition: all 0.4s ease-in;
+  }
+  
+  .social-login {
+    display: flex;
+    width: 280px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: var(--active-nav-btn-color);
+    margin-top: 20px;
+  }
+
+  .social-item {
+    cursor: pointer;
+  }
+
+  .social-item:hover {
+    transform: scale(1.3, 1.3);
+    color: violet;
+    transition: all 0.2s ease-in;
+  }
+  
+  .social-login img {
+    width: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .register-suggestion {
+    font-size: 18px;
+
+  }
+
+  .register-suggestion span {
+    color: var(--active-nav-btn-color);
+    cursor: pointer;
+  }
+
+  .register-suggestion span:hover {
+    color: white;
+    transition: color 0.5s ease-in;
+  }
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+     .login {
+
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+     .login {
+
+    }
+
+}
+
