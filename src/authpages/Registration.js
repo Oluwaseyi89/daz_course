@@ -59,8 +59,10 @@ function Registration ({ handleSwitchToLogin }) {
     return (
         <>
         <div className="registration">
-            <h2>Register</h2>
-            <form onSubmit={handleSubmit}>
+        <div className='register-title'>                        
+              <img alt="daz-logo" src="../assets/images/daz_logo.svg"/>
+              <h3 style={{fontFamily: "Mulish Bold"}}>DazCourse</h3>
+            </div>            <form onSubmit={handleSubmit}>
                 {
                     isProfileImg 
                     ?
@@ -103,6 +105,7 @@ function Registration ({ handleSwitchToLogin }) {
                     placeholder="Enter your Password"
                     value={password}
                     onChange={handleChange}
+                    minLength={8}
                     required
                 />
                 <input
@@ -112,6 +115,7 @@ function Registration ({ handleSwitchToLogin }) {
                     placeholder="Confirm your Password"
                     value={confirmPassword}
                     onChange={handleChange}
+                    minLength={8}
                     required
                 />
                 <input type="submit" value="Register" />

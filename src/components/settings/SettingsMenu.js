@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import '../../styles/settingsmenu.css';
 
 function SettingsMenu ({ handleSetActiveContentView }) {
+
+    const settingViewIdObj = JSON.parse(localStorage.getItem("settingsViewId"));
+
+    const viewId = settingViewIdObj?.viewId;
+
+    const [dynamicViewId, setDynamicViewId] = useState(viewId);
+
 
     const [menuItems, setMenuItems] = useState([
         {
@@ -37,7 +44,7 @@ function SettingsMenu ({ handleSetActiveContentView }) {
         },
     ]);
 
-    const handleSetActiveMenu = (id) => {
+    const handleSetActiveMenu = useCallback((id) => {
         let modMenu = menuItems.map(each => {
             if(each.id === id) {
                 return { ...each, isActive: true }
@@ -50,7 +57,7 @@ function SettingsMenu ({ handleSetActiveContentView }) {
 
         setMenuItems(modMenu);
 
-    }
+    },[menuItems]);
 
     const handleMenuItemClick = (id) => {
         handleSetActiveMenu(id);
@@ -66,6 +73,17 @@ function SettingsMenu ({ handleSetActiveContentView }) {
     const inActiveStyle = {
         fontFamily: 'Mulish',
     }
+
+    useEffect(() => {
+        if(dynamicViewId) {
+            handleSetActiveMenu(dynamicViewId);
+        }
+
+        return () => {
+            setDynamicViewId(null)
+        }
+
+    },[dynamicViewId, handleSetActiveMenu]);
 
     return (
         <div className="settingsmenu">

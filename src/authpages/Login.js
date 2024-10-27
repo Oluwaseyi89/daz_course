@@ -103,23 +103,26 @@ const LoginForm = ({handleSwitchToRegistration}) => {
 
   return (
     <div className='login-form'>
-      <form className="login-card">
-            <h2>Login</h2>
+      <form className="login-card" onSubmit={(e) => handleFormSubmit(e)}>
+            <div className='login-title'>                        
+              <img alt="daz-logo" src="../assets/images/daz_logo.svg"/>
+              <h3 style={{fontFamily: "Mulish Bold"}}>DazCourse</h3>
+            </div>
             
             <div className="input-group">
               <label htmlFor="email">Email</label>
-              <input type="text" name='email' value={email} onChange={(e) => handleFormCredChange(e)} id="email" placeholder="Enter your E-mail" />
+              <input type="email" name='email' value={email} onChange={(e) => handleFormCredChange(e)} placeholder="Enter your E-mail" required/>
             </div>
     
             <div className="input-group">
               <label htmlFor="password">Password</label>
-              <input type="password" name='password' value={password} onChange={(e) => handleFormCredChange(e)} id="password" placeholder="Enter your password" />
+              <input type="password" name='password' value={password} onChange={(e) => handleFormCredChange(e)} placeholder="Enter your password" required/>
             </div>
     
-            <button className="login-btn" onClick={(e) => handleFormSubmit(e)}>Login</button>
+            {/* <button className="login-btn" onClick={(e) => handleFormSubmit(e)}>Login</button> */}
+            <input className='login-btn' type='submit' value="Login" />
     
             <div className="social-login">
-              {/* <img src="path-to-google-icon.png" alt="Google" /> */}
               <div className='social-item'>
                 <FaGoogle/>
               </div>
@@ -129,8 +132,6 @@ const LoginForm = ({handleSwitchToRegistration}) => {
               <div className='social-item'>
                 <FaXTwitter/>
               </div>
-              {/* <img src="path-to-facebook-icon.png" alt="Facebook" /> */}
-              {/* <img src="path-to-twitter-icon.png" alt="Twitter" /> */}
             </div>
           </form>
           <div className='register-suggestion'>Don't have an account? <span onClick={() => handleSwitchToRegistration()}>Register</span> instead.</div>

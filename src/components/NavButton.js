@@ -31,7 +31,7 @@ function NavButton ({ item, navBtnClick }) {
                 <img alt='btn-icon' src={isActive ? iconUrl[0] : iconUrl[1]}/>
                 }
             </div>
-            <div className='btn-title'>{title}</div>
+            <div className='btn-title' style={{fontFamily: "Mulish Bold"}}>{title}</div>
         </div>
     );
 

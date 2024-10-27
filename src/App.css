@@ -22,12 +22,17 @@
   font-weight: 700;
 }
 
+* {
+  font-family: 'Mulish';
+}
+
 
 
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* font-family: 'Mulish'; */
 }
 
 *::-webkit-scrollbar {

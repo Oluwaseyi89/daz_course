@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext, useEffect } from 'react';
+import React, { useState, useRef, useContext, useEffect, useCallback } from 'react';
 
 import '../../styles/settings.css';
 import AccountSettings from './AccountSettings';
@@ -10,6 +10,7 @@ import PrivacySettings from './PrivacySettings';
 import CloseAccount from './CloseAccount';
 import { AppContext } from '../../App';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa6';
+import { useLocation } from 'react-router-dom';
 
 function Settings (props) {
     
@@ -22,6 +23,15 @@ function Settings (props) {
 
     let currentChevronRef = chevronRef.current;
     let currentSmMenuRef = smMenuRef.current;
+    
+    const settingViewIdObj = JSON.parse(localStorage.getItem("settingsViewId"));
+
+    const viewId = settingViewIdObj?.viewId;
+
+    const [dynamicViewId, setDynamicViewId] = useState(viewId);
+
+
+
 
     const handleChevronClick = () => {
         if(isChevronUp) {
@@ -35,7 +45,7 @@ function Settings (props) {
     }
    
 
-    const { showMenu } = useContext(AppContext);
+    const { showMenu, userMenuVisible } = useContext(AppContext);
 
     useEffect(() => {
         const setIntructorPageTitle = () => {
@@ -48,6 +58,18 @@ function Settings (props) {
         setIntructorPageTitle();
         return () => {}
     },[showMenu]);
+
+    useEffect(() => {
+        const setIntructorPageTitle = () => {
+            if(userMenuVisible) {
+                settingsTitleRef.current.style.position = "static";
+            } else {
+                settingsTitleRef.current.style.position = "fixed";
+            }
+        }
+        setIntructorPageTitle();
+        return () => {}
+    },[userMenuVisible]);
 
     const [viewChoice, setViewChoice] = useState([
         {
@@ -82,14 +104,27 @@ function Settings (props) {
         },
     ]);
 
-    const handleSetActiveContentView = (id) => {
+   
+
+    const handleSetActiveContentView = useCallback((id) => {
         let modViewChoice = viewChoice.map(each => {
             if(each.id === id) return {...each, isActive: true};
             else return {...each, isActive: false};
         });
 
         setViewChoice(modViewChoice);
-    }
+    },[viewChoice]);
+
+    useEffect(() => {
+        if(dynamicViewId) {
+            handleSetActiveContentView(dynamicViewId);
+        }
+
+        return () => {
+            setDynamicViewId(null);
+        }
+
+    },[dynamicViewId, handleSetActiveContentView]);
 
     const renderSettingChoice = () => {
         let activeChoice = viewChoice.find(each => each.isActive)

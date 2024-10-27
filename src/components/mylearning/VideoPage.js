@@ -17,7 +17,7 @@ function VideoPage (props) {
 
     const breadcrumbTitleRef = useRef();
 
-    const {showMenu} = useContext(AppContext)
+    const {showMenu, userMenuVisible} = useContext(AppContext)
 
     
 
@@ -32,6 +32,21 @@ function VideoPage (props) {
         setBreadcrumbTitle();
         return () => {}
     },[showMenu]);
+
+    useEffect(() => {
+      const setBreadcrumbTitle =  () => {
+        
+  
+        if(userMenuVisible) {
+          breadcrumbTitleRef.current.style.position = "static";
+        } else {
+          breadcrumbTitleRef.current.style.position = "fixed";
+        }
+      };
+      setBreadcrumbTitle();
+  
+      // return () => {}
+    }, [userMenuVisible]);
 
     const renderContent = () => {
       switch (activeTab) {

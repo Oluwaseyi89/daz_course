@@ -20,6 +20,8 @@
         font-size: 31px;
         font-family: 'Mulish Bold';
         margin-bottom: 15px;
+        text-align: left;
+        color: black;
       }
       
       .coursedescription p {

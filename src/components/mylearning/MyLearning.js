@@ -5,7 +5,7 @@ import CourseProgressCard from './CourseProgressCard';
 import { MyProgress } from '../dashboard';
 
 function MyLearning () {
-  const { appState, showMenu } = useContext(AppContext);
+  const { appState, showMenu, userMenuVisible } = useContext(AppContext);
   const { courseLearning } = appState;
   const [activeId, setActiveId] = useState(1);
 
@@ -21,12 +21,31 @@ function MyLearning () {
     const setInstructorPageTitle = () => {
       if (showMenu) {
         learningTitleRef.current.style.position = "static";
+      } else if(!showMenu) {
+        learningTitleRef.current.style.position = "fixed";
+      }
+
+    
+    };
+    setInstructorPageTitle();
+
+    // return () => {}
+  }, [showMenu]);
+
+  useEffect(() => {
+    const setInstructorPageTitle =  () => {
+      
+
+      if(userMenuVisible) {
+        learningTitleRef.current.style.position = "static";
       } else {
         learningTitleRef.current.style.position = "fixed";
       }
     };
     setInstructorPageTitle();
-  }, [showMenu]);
+
+    // return () => {}
+  }, [userMenuVisible]);
 
   const handleTabClick = (id) => {
     let modifiedTabs = tabOptions.map(tab => ({

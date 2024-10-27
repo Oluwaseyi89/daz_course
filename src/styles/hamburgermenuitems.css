@@ -179,7 +179,7 @@
 
     .hamburger-menu-items {
         position: absolute;
-        height: 500px;
+        height: fit-content;
         width: 300px;
         padding: 0;
         box-sizing: border-box;
@@ -189,7 +189,7 @@
         border-bottom-left-radius: 8px;
         /* border: solid var(--light-separator-color) 1px; */
         /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);    */
-        box-shadow: 2px 2px 3px 2px gray;   
+        box-shadow: 1px 1px 2px 1px gray;   
         background-color: var(--active-nav-btn-color);
         z-index: 1;
         /* opacity: 1; */
@@ -227,7 +227,7 @@
 
      .menu-user-div {
         /* border: solid green 1px; */
-        height: 187.5px;
+        height: fit-content;
         width: 100%;
         border-bottom: solid silver 1px;
         display: flex;
@@ -235,8 +235,52 @@
         justify-content: space-evenly;
         align-items: flex-start;
         padding-left: 15px;
+     }
+
+     .sm-user-menu-container {
+      height: fit-content;
+      width: 100%;
+      border-top: solid 1px var(--light-separator-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 3px;
+     }
+
+     .sm-user-menu {
+      width: 100%;
+      /* border: solid red 1px; */
+      height: 46.87px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+     }
+
+     .sm-user-menu span:first-child {
+      width: 80%;
+      /* border: solid red 1px; */
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 18px;
+      color: white;
+     }
 
 
+     .sm-user-menu span:nth-child(2) {
+      width: 20%;
+      /* border: solid red 1px; */
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      color: white;
 
      }
 
@@ -272,6 +316,8 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        color: white;
+        font-size: 24px;
 
      }
 
@@ -298,11 +344,15 @@
      .sm-logon-user {
         /* border: solid green 1px; */
         height: 93.75px;
-        width: 250px;
+        width: 270px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+     }
+
+     .sm-chevron-div {
+      color: white;
      }
 
      .sm-user-icon {

@@ -1,7 +1,7 @@
 
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaGear, FaUser } from "react-icons/fa6";
+import { FaArrowRight, FaBell, FaChevronDown, FaChevronUp, FaGear, FaHeart, FaUser } from "react-icons/fa6";
 
 import {AppContext} from "../App";
 import TabNavButton from "./TabNavButton";
@@ -11,29 +11,27 @@ import { AUTH_STATE_KEY } from "../states";
 
 function Header () {
 
-    const {navBtnClick, appState, showMenu, setShowMenu} = useContext(AppContext);
+    const {navBtnClick, appState, showMenu, setShowMenu, userMenuVisible, setUserMenuVisible} = useContext(AppContext);
 
     const userMenuRef = useRef();
     
+    console.log(userMenuVisible);
 
-    useEffect(() => {
-        let currentMenuRef = userMenuRef.current;
-        let mouseAction = () => {
-            if(currentMenuRef){          
-                currentMenuRef.style.display = "none";
-            }
-        }
 
-        currentMenuRef.addEventListener('mouseleave', mouseAction);
+    const handleNavigateUserSettings = (viewId) => {
 
-        return () => {
-            currentMenuRef.removeEventListener('mouseleave', mouseAction);
-        }
-    });
+        localStorage.setItem("settingsViewId", JSON.stringify({viewId}));
+        window.location.href = "/settings";
+    }
 
-    const handleShowUserMenu = () => {
-        if(userMenuRef) {
+   
+    const handleToggleUserMenu = () => {
+        if(userMenuRef && userMenuVisible) {
+            userMenuRef.current.style.display = "none";
+            setUserMenuVisible(false);
+        } else {
             userMenuRef.current.style.display = "block";
+            setUserMenuVisible(true);
         }
     }
 
@@ -73,10 +71,12 @@ function Header () {
                 </Link>
                 <div className="right-group">
                     <div className="love-block">
-                        <img alt="love-icon" src="../assets/images/inactive_favorite.svg" />
+                        {/* <img alt="love-icon" src="../assets/images/inactive_favorite.svg" /> */}
+                        <FaHeart style={{color: "var(--active-nav-btn-color)"}}/>
                     </div>
                     <div className="notification-block" onClick={() => handleNotificationPosition()}>
-                        <img alt="notification-icon" src="../assets/images/inactive_notification_icon.svg" />
+                        {/* <img alt="notification-icon" src="../assets/images/inactive_notification_icon.svg" /> */}
+                        <FaBell style={{color: "var(--active-nav-btn-color)"}}/>
                         {
                             showNotification ?
                             (
@@ -86,7 +86,7 @@ function Header () {
                             ) : ""
                         }
                     </div>
-                    <div className="user-block" onClick={() => handleShowUserMenu()}>
+                    <div className="user-block" onClick={() => handleToggleUserMenu()}>
                         <div className="user-avatar" >
                             <img alt="user-avatar" src={image_url} />
                         </div>
@@ -94,10 +94,12 @@ function Header () {
                             <div className="user-name">{fullName}</div>
                             <div className="email">{email}</div>
                         </div>
+                        <div className="user-menu-drop-btn" >{userMenuVisible ? <span><FaChevronUp/></span> : <span><FaChevronDown/></span>}</div>
                         <div ref={userMenuRef} className="user-menu">
+                            {/* <div className="user-menu-closer">{userMenuVisible ? <span><FaChevronUp/></span> : <span><FaChevronDown/></span>}</div> */}
                             <ul>
-                                <li><span>Profile</span><span><FaUser/></span></li>
-                                <li><span>Settings</span><span><FaGear/></span></li>
+                                <li onClick={() => handleNavigateUserSettings(2)}><span>Profile</span><span><FaUser/></span></li>
+                                <li onClick={() => handleNavigateUserSettings(1)}><span >Accout Settings</span><span><FaGear/></span></li>
                                 <li onClick={() => handleLogOutClick()}><span>Log out</span><span><FaArrowRight/></span></li>
                             </ul>
                         </div>
@@ -108,7 +110,7 @@ function Header () {
                 </div>
                 {
                     showMenu ? (
-                            <HamburgerMenuItems handleHideMenu={handleHideMenu} />
+                            <HamburgerMenuItems authState={authState} handleHideMenu={handleHideMenu} />
                     ) : ""
 
                 }

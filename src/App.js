@@ -26,6 +26,12 @@ function App() {
   
 
   const [showMenu, setShowMenu] = useState(false);
+  const [userMenuVisible, setUserMenuVisible] = useState(false);
+  // const [userSettingsViewId, setUserSettingsViewId] = useState();
+
+  // const handleSetUserSettingsViewId = (viewId) => {
+  //   localStorage.setItem("settingsViewId", JSON.stringify({viewId}));
+  // }
 
 
  
@@ -94,7 +100,7 @@ function App() {
 
   const { authState } = appState;
   const { isAuthenticated } = authState;
-  console.log(isAuthenticated);
+  // console.log(isAuthenticated);
 
  
   return (
@@ -105,7 +111,9 @@ function App() {
         addToCart, 
         removeFromCart, 
         showMenu,
-        setShowMenu
+        setShowMenu,
+        userMenuVisible,
+        setUserMenuVisible
         }}>
        <Router>
         { !isAuthenticated 
